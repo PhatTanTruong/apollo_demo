@@ -1,10 +1,25 @@
 <div class="main-app__layout" [nbSpinner]="globalLoading | async">
   <nb-layout class="app__layout">
-    <nb-layout-header class="layout__header" fixed *ngIf="isLoggedIn | async">
-      <span class="user-name">Hello {{ loggedInfo.name }}</span>
-      <button nbButton hero status="primary" (click)="logoutHandler()">
-        Logout
-      </button>
+    <nb-layout-header fixed *ngIf="isLoggedIn | async">
+      <div class="layout__header">
+        <div class="header__info">
+          <span class="user-name">Hello {{ loggedInfo.name }}</span>
+        </div>
+        <div class="header__controls">
+          <button
+            nbButton
+            hero
+            status="primary"
+            (click)="backToListHandler()"
+            *ngIf="isInDemoPage"
+          >
+            Back to list
+          </button>
+          <button nbButton hero status="primary" (click)="logoutHandler()">
+            Logout
+          </button>
+        </div>
+      </div>
     </nb-layout-header>
 
     <nb-layout-column>
@@ -13,8 +28,7 @@
       </div>
     </nb-layout-column>
 
-    <nb-layout-footer fixed>
-      <!-- Insert footer here -->
-    </nb-layout-footer>
+    <!-- <nb-layout-footer fixed>
+    </nb-layout-footer> -->
   </nb-layout>
 </div>

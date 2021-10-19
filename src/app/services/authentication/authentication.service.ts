@@ -18,19 +18,19 @@ export class AuthenticationService {
   login(name: string, password: string) {
     this.globalStore.setLoading(true);
 
+    const successRes = {
+      status: 200,
+      data: { name, token: `${password}${Math.random()}` },
+    };
+
+    const errorRes = { status: 400, message: 'Login fail' };
+
     of(validate(name, password))
       .pipe(
-        map((res) =>
-          res
-            ? {
-                status: 200,
-                data: { name, token: `${password}${Math.random()}` },
-              }
-            : { status: 400, message: 'Login fail' }
-        ),
+        map((res) => (res ? successRes : errorRes)),
         delay(250)
       )
-      .subscribe((response) => {
+      .subscribe((response: any) => {
         if (response.data) {
           this.authStore.update(response.data);
           localStorage.setItem('loggedInfo', JSON.stringify(response.data));
@@ -40,7 +40,11 @@ export class AuthenticationService {
             'loggedInfo',
             JSON.stringify({ token: '', name: '' })
           );
+          this.globalStore.update({
+            apiError: { message: 'Login fail!', status: 400 },
+          });
         }
+
         this.globalStore.setLoading(false);
       });
   }

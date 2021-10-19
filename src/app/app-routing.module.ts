@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
     path: 'charts',
     loadChildren: () =>
       import('./pages/charts/charts.module').then((m) => m.ChartsModule),
+    canActivate: [LoginGuard],
   },
   {
     path: '**',

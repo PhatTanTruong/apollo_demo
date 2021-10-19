@@ -7,6 +7,10 @@ export const chartTypes = [
     key: 'bar',
     name: 'Bar Chart',
   },
+  {
+    key: 'pie',
+    name: 'Pie Chart',
+  },
 ];
 
 export const LineChartDatas = [
@@ -144,5 +148,24 @@ export const LineChartDatas = [
         value: 34952,
       },
     ],
+  },
+];
+
+export const singleChartData = [
+  {
+    name: 'Company A',
+    value: 770,
+  },
+  {
+    name: 'Company B',
+    value: 546,
+  },
+  {
+    name: 'Company C',
+    value: 359,
+  },
+  {
+    name: 'Company D',
+    value: 609,
   },
 ];

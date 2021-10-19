@@ -9,7 +9,7 @@ import { LineChartDatas } from '../../../../mocks/charts';
 export class LineChartComponent implements OnInit {
   constructor() {}
 
-  view: any[] = [1200, 400];
+  view = [1200, 400];
   showLegend = true;
   showLabels = true;
   animations = true;

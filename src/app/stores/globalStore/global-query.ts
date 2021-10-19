@@ -11,4 +11,5 @@ export class GlobalQuery extends Query<GlobalState> {
   }
 
   loading$ = this.selectLoading();
+  apiErrorInfo$ = this.select((state) => state.apiError);
 }

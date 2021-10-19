@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 
-export interface GlobalState {}
+export interface APIError {
+  status: number;
+  message: string;
+}
 
-export const initialState = () => ({});
+export interface GlobalState {
+  apiError: APIError;
+}
+
+export const initialState = () => ({ apiError: { status: 0, message: '' } });
 
 @Injectable({
   providedIn: 'root',

@@ -13,20 +13,20 @@ export class LoginComponent implements OnInit {
     private authService: AuthenticationService,
     private authQuery: AuthenticationQuery,
     private router: Router
-  ) {}
-
-  showPassword = false;
-
-  userName = '';
-  password = '';
-
-  ngOnInit(): void {
+  ) {
     this.authQuery.loggedIn$.subscribe((isLoggedIn) => {
       if (isLoggedIn) {
         this.router.navigate(['/charts']);
       }
     });
   }
+
+  showPassword = false;
+
+  userName = '';
+  password = '';
+
+  ngOnInit(): void {}
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;

@@ -4,8 +4,17 @@
     margin-inline: auto;
   }
 
-  ::ng-deep .layout__header nav {
-    justify-content: flex-end;
+  .layout__header {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__controls {
+      button:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
 
     span.user-name {
       margin-right: 20px;
