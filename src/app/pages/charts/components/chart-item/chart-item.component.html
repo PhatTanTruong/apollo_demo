@@ -1,0 +1,19 @@
+<nb-card class="chart-item__container">
+  <nb-card-body>
+    <div class="item__info">
+      {{ item.name }}
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer class="item__footer">
+    <button
+      nbButton
+      status="primary"
+      size="small"
+      outline
+      (click)="goToDemoHandler()"
+    >
+      Demo
+    </button>
+  </nb-card-footer>
+</nb-card>

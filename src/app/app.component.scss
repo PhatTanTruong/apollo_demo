@@ -1,0 +1,15 @@
+.app__layout {
+  .app__container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  ::ng-deep .layout__header nav {
+    justify-content: flex-end;
+
+    span.user-name {
+      margin-right: 20px;
+      font-size: 20px;
+    }
+  }
+}

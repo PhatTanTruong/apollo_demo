@@ -1,0 +1,20 @@
+<div class="main-app__layout" [nbSpinner]="globalLoading | async">
+  <nb-layout class="app__layout">
+    <nb-layout-header class="layout__header" fixed *ngIf="isLoggedIn | async">
+      <span class="user-name">Hello {{ loggedInfo.name }}</span>
+      <button nbButton hero status="primary" (click)="logoutHandler()">
+        Logout
+      </button>
+    </nb-layout-header>
+
+    <nb-layout-column>
+      <div class="app__container">
+        <router-outlet></router-outlet>
+      </div>
+    </nb-layout-column>
+
+    <nb-layout-footer fixed>
+      <!-- Insert footer here -->
+    </nb-layout-footer>
+  </nb-layout>
+</div>

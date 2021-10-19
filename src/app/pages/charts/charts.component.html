@@ -1,0 +1,9 @@
+<div class="charts-container">
+  <div class="chart-list__wrapper" *ngIf="chartTypeList.length">
+    <app-chart-item
+      *ngFor="let item of chartTypeList; trackBy: trackByFn"
+      [item]="item"
+      (clickDetail)="goToDemoHandler(item.key)"
+    ></app-chart-item>
+  </div>
+</div>

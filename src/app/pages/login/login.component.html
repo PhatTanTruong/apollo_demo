@@ -1,0 +1,45 @@
+<div class="login-container">
+  <nb-card class="login__form">
+    <nb-card-header>Login</nb-card-header>
+
+    <nb-card-body>
+      <div class="form__input">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="text"
+          nbInput
+          fullWidth
+          [(ngModel)]="userName"
+        />
+      </div>
+
+      <div class="form__input">
+        <label for="password">Password</label>
+        <nb-form-field>
+          <input
+            id="password"
+            [type]="getInputType()"
+            nbInput
+            fullWidth
+            [(ngModel)]="password"
+          />
+          <button nbSuffix nbButton ghost (click)="toggleShowPassword()">
+            <nb-icon
+              [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+              pack="eva"
+              [attr.aria-label]="
+                showPassword ? 'hide password' : 'show password'
+              "
+            >
+            </nb-icon>
+          </button>
+        </nb-form-field>
+      </div>
+    </nb-card-body>
+
+    <nb-card-footer class="form__footer">
+      <button nbButton status="primary" (click)="loginHandler()">Login</button>
+    </nb-card-footer>
+  </nb-card>
+</div>
