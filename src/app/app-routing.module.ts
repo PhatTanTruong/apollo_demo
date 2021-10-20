@@ -20,6 +20,12 @@ const routes: Routes = [
     canActivate: [LoginGuard],
   },
   {
+    path: 'product',
+    loadChildren: () =>
+      import('./pages/product/product.module').then((m) => m.ProductModule),
+    canActivate: [LoginGuard],
+  },
+  {
     path: '**',
     redirectTo: 'login',
   },

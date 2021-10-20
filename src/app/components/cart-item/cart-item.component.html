@@ -1,0 +1,30 @@
+<div class="cart-item-container">
+  <div class="item__row">
+    <span class="item__name">{{ item.name }}</span>
+    <div class="amount__controls">
+      <button
+        nbButton
+        outline
+        size="tiny"
+        status="primary"
+        (click)="updateAmountHandler(-1)"
+      >
+        <nb-icon icon="minus-outline"></nb-icon>
+      </button>
+      <span class="amount">x{{ item.amount }}</span>
+      <button
+        nbButton
+        outline
+        size="tiny"
+        status="primary"
+        (click)="updateAmountHandler(1)"
+      >
+        <nb-icon icon="plus-outline"></nb-icon>
+      </button>
+    </div>
+  </div>
+  <div class="item__row">
+    <span></span>
+    <span class="amount__total">{{ item.price * item.amount }}$</span>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.cart-item-container {
+  border-bottom: 1px solid #666;
+  padding: 10px 0;
+
+  .item__row {
+    display: flex;
+    justify-content: space-between;
+
+    .item__name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .amount__controls {
+      span.amount {
+        margin-inline: 10px;
+        font-weight: bold;
+      }
+    }
+
+    span.amount__total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  }
+}

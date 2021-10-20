@@ -1,0 +1,20 @@
+<nb-card class="cart-container">
+  <nb-card-header> CARTS </nb-card-header>
+  <nb-card-body>
+    <app-cart-item
+      *ngFor="let item of cartList; trackBy: trackByFn"
+      [item]="item"
+    ></app-cart-item>
+
+    <div class="total-price">
+      <h2>Total:</h2>
+      <h2>{{ totalPrice }}$</h2>
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <button nbButton status="primary" (click)="closeCartHandler()">
+      Close
+    </button>
+  </nb-card-footer>
+</nb-card>

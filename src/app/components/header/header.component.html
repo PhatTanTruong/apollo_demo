@@ -1,0 +1,42 @@
+<div class="layout__header">
+  <div class="header__info">
+    <span class="user-name">Hello {{ loggedInfo.name }}</span>
+  </div>
+
+  <div class="header__controls">
+    <button
+      nbButton
+      hero
+      status="primary"
+      (click)="openCart()"
+      *ngIf="isInProductsPage"
+    >
+      <nb-icon icon="shopping-cart-outline"> </nb-icon>
+      <span class="cart__amount">{{ cartAmount }}</span>
+    </button>
+
+    <button
+      nbButton
+      hero
+      status="primary"
+      [routerLink]="['/product']"
+      *ngIf="!isInProductsPage"
+    >
+      Products
+    </button>
+
+    <button
+      nbButton
+      hero
+      status="primary"
+      [routerLink]="['/charts']"
+      *ngIf="!isInChartsPage"
+    >
+      Charts
+    </button>
+
+    <button nbButton hero status="primary" (click)="logoutHandler()">
+      Logout
+    </button>
+  </div>
+</div>

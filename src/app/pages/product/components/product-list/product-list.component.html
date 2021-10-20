@@ -1,0 +1,6 @@
+<div class="product-list-container">
+  <app-product-item
+    *ngFor="let item of menuList; trackBy: trackByFn"
+    [item]="item"
+  ></app-product-item>
+</div>

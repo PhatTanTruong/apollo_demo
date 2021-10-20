@@ -1,0 +1,52 @@
+<div class="add-new-container">
+  <nb-card class="item__wrapper">
+    <nb-card-header>Add new</nb-card-header>
+    <nb-card-body>
+      <div class="form__input">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          nbInput
+          fullWidth
+          [(ngModel)]="newItem.name"
+        />
+      </div>
+
+      <div class="form__input">
+        <label for="description">Description</label>
+        <input
+          id="description"
+          type="text"
+          nbInput
+          fullWidth
+          [(ngModel)]="newItem.description"
+        />
+      </div>
+
+      <div class="form__input">
+        <label for="price">Price</label>
+        <input
+          id="price"
+          type="number"
+          min="0.1"
+          step="0.01"
+          nbInput
+          fullWidth
+          [(ngModel)]="newItem.price"
+        />
+      </div>
+    </nb-card-body>
+
+    <nb-card-footer class="form__footer">
+      <button
+        nbButton
+        status="primary"
+        (click)="addItemHandler()"
+        [disabled]="buttonDisable()"
+      >
+        Add
+      </button>
+    </nb-card-footer>
+  </nb-card>
+</div>

@@ -1,0 +1,9 @@
+.cart-container {
+  width: 35rem;
+  max-width: 90vw;
+
+  .total-price {
+    display: flex;
+    justify-content: space-between;
+  }
+}

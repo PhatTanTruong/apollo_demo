@@ -1,0 +1,32 @@
+.product-item-container {
+  ::ng-deep .item__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+
+    .item__info {
+      .item__name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    }
+
+    .item__controls {
+      .control__top {
+        text-align: right;
+        margin-bottom: 10px;
+
+        span.item__price {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+
+      input {
+        width: 100px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

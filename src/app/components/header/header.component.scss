@@ -1,0 +1,29 @@
+.layout__header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__controls {
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    button {
+      span.cart__amount {
+        background-color: #fb6710;
+        border-radius: 4px;
+        padding: 2px 7px;
+      }
+    }
+  }
+
+  span.user-name {
+    margin-right: 20px;
+    font-size: 20px;
+  }
+}
+
+:host {
+  width: 100%;
+}

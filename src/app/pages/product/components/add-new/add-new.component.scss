@@ -1,0 +1,17 @@
+.add-new-container {
+  .form__input {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    label {
+      margin-right: 15px;
+    }
+  }
+
+  .form__footer {
+    text-align: end;
+  }
+}
