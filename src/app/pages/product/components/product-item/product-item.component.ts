@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { ProductModel } from '../../../../mocks/product';
 import { CartStore } from '../../../../stores/productsStore/cart-store';
+import { ProductQuery } from '../../../../stores/productsStore/products-query';
+import { ProductStore } from '../../../../stores/productsStore/products-store';
 
 @Component({
   selector: 'app-product-item',
@@ -15,9 +17,14 @@ import { CartStore } from '../../../../stores/productsStore/cart-store';
 })
 export class ProductItemComponent implements OnInit, OnChanges {
   @Input() item: ProductModel;
-  constructor(private cartStore: CartStore) {}
+  constructor(
+    private cartStore: CartStore,
+    private productStore: ProductStore,
+    private productQuery: ProductQuery
+  ) {}
 
   itemAmount = 0;
+  isAdded = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.item.currentValue !== changes.item.previousValue) {
@@ -25,11 +32,14 @@ export class ProductItemComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productQuery
+      .isItemAddToCart$(this.item.id)
+      .subscribe((isAddToCart) => (this.isAdded = isAddToCart));
+  }
 
   addToCartHandler() {
     this.cartStore.upsert(this.item.id, (oldState: any) => {
-      console.log(oldState);
       if (oldState.id) {
         return {
           ...oldState,
@@ -39,5 +49,7 @@ export class ProductItemComponent implements OnInit, OnChanges {
         return this.item;
       }
     });
+
+    this.productStore.ui.update(this.item.id, { isAddToCard: true });
   }
 }

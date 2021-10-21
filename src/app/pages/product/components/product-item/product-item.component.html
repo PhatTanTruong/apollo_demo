@@ -1,5 +1,5 @@
 <div class="product-item-container">
-  <nb-card class="item__wrapper">
+  <nb-card class="item__wrapper" [ngClass]="{ choose: isAdded }">
     <div class="item__info">
       <div class="item__name">
         {{ item.name }}
