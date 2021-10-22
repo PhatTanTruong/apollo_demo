@@ -12,4 +12,9 @@ export class CartStore extends EntityStore<CartState> {
   constructor() {
     super();
   }
+
+  akitaPreUpdateEntity(entities, newEntityies) {
+    console.log('In PreUpdateEntity ', entities, newEntityies);
+    return newEntityies;
+  }
 }

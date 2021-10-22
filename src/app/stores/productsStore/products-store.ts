@@ -27,4 +27,9 @@ export class ProductStore extends EntityStore<
     const initUIState = { isAddToCard: false };
     this.createUIStore().setInitialEntityState(initUIState);
   }
+
+  akitaPreAddEntity(newEntity: any) {
+    console.log('In PreAdd ', newEntity);
+    return newEntity;
+  }
 }
